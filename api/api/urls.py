@@ -16,8 +16,17 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from django.conf.urls import url, include
+from django.conf.urls.static import static
+from rest_framework import routers
+from SongsApp.views import SongViewSet
+from django.conf import settings
+
+router = routers.DefaultRouter()
+router.register('songs', SongViewSet, basename='songs') # 127.0.0.1:8000/songs/ -> ROUTES 
 
 urlpatterns = [
+    path('api/', include(router.urls)),
     path('admin/', admin.site.urls),
-    url(r'^', include('EmployeeApp.urls'))
-]
+    #path('employees/', EmployeeDetail.as_view()),
+
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

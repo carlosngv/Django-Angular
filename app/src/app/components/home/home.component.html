@@ -1,0 +1,67 @@
+
+
+<div class="main-container">
+    <div class="logo-text">
+        𝙎𝙤𝙣𝙜𝘼𝙥𝙥
+    </div>
+    <nav>
+        <ul>
+            <li>
+                <a href="#">Home</a>
+            </li>
+            <li>
+                <a (click)="scroll(songcatalogue)">Songs</a>
+            </li>
+
+        </ul>
+        <div class="text-slogan">
+            Get to know your music
+        </div>
+    </nav>
+</div>
+
+<div class="content-container" fxLayout.xs="column">
+    <div class="info-container">
+        <div class="text-info-container" fxLayout.xs="column">
+            <h1>𝙎𝙤𝙣𝙜𝘼𝙥𝙥</h1>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel recusandae illo molestias consectetur mollitia
+                odit.
+                Alias quibusdam veniam repudiandae? Odit in quos repellendus accusamus fuga minus non, perferendis labore
+                quasi?
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe alias aspernatur totam perferendis ipsa quam
+                id
+                unde adipisci sit? Tenetur cumque officia voluptates minus possimus modi culpa alias, quod deleniti?
+            </p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel recusandae illo molestias consectetur mollitia
+                odit.
+                Alias quibusdam veniam repudiandae? Odit in quos repellendus accusamus fuga minus non, perferendis labore
+                quasi?
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe alias aspernatur totam perferendis ipsa quam
+                id
+                unde adipisci sit? Tenetur cumque officia voluptates minus possimus modi culpa alias, quod deleniti? Lorem,
+                ipsum dolor sit amet consectetur adipisicing elit. Nesciunt rem totam, quo id officia assumenda quia
+                explicabo harum reiciendis ad optio, magni consequuntur. A unde hic ea officia consequuntur sit.
+            </p>
+        </div>
+        <div class="img-cont">
+        </div>
+    
+    </div>
+    
+    
+    
+    <div #songcatalogue class="songs-container" fxLayout="column">
+        <h1><strong>Songs Catalogue</strong></h1 >
+        <mat-grid-list fxFlex="100%" gutterSize="20px" cols="2" rowHeight="2:1" >
+            <mat-grid-tile *ngFor="let song of songs" [routerLink]="['/song', song.song_id]">
+                <img src="{{API_BASE_URL + song.song_cover}}" alt="song.song_name">
+                <mat-grid-tile-footer>
+                    {{song.song_name}} 
+                    <span class="flex-spacer"></span>
+                    {{song.song_author}}
+                </mat-grid-tile-footer>
+            </mat-grid-tile>
+        </mat-grid-list>
+    </div>
+</div>
+

@@ -1,0 +1,13 @@
+footer {
+    height: 100px;
+    bottom: -1000;
+    width: 100%;
+    background: #495057;
+    padding: 40px;
+    position: absolute;
+}
+
+.text-cont {
+    color: white;
+    text-align: center;
+}

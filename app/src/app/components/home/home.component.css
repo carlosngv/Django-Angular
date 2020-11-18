@@ -1,0 +1,89 @@
+
+
+.main-container {
+    width: 100%;
+    height: 80%;
+    background: url('/assets/images/music2.png') no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+    color: white;
+    position: relative;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+nav ul li {
+    display: inline-block;
+}
+
+.logo-text {
+    padding: 30px 0; 
+    text-align: center;
+    font-size: 40px
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: white;
+    transition: all 1s;
+    font-size: 30px;
+}
+
+nav ul li a:hover {
+    color: grey;
+    cursor: pointer;
+}
+
+.text-slogan {
+    font-size: 70px;
+    position: absolute;
+    top: 280px;
+    right: 0;
+    bottom: 0;
+    left: 30px;
+    margin: auto;
+}
+
+.info-container {
+    width: 100%;
+    height: 50vh;
+    padding: 40px;
+    display: flex;
+    flex-direction: row;
+    column-gap: 20px;
+}
+
+.text-info-container {
+    width: 70%;
+}
+
+.img-cont{
+    width: 30%;
+    background: url('/assets/images/appmusic.jpg') no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.songs-container {
+    width: 100%;
+    padding: 40px;
+}
+
+mat-grid-tile {
+    transition: all 1s;
+}
+
+mat-grid-tile img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+mat-grid-tile:hover {
+    box-shadow: 10px 10px 10px 10px;
+}

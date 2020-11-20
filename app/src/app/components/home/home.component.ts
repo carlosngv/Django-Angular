@@ -2,6 +2,8 @@ import { Component, OnInit, Inject } from '@angular/core';
 import { SongService } from '../../services/song.service'
 import { Song } from '../../shared/song';
 import { API_BASE_URL } from '../../shared/apiURL';
+import { MatDialog } from '@angular/material/dialog';
+import { SongDetailComponent } from '../song-detail/song-detail.component';
 
 @Component({
   selector: 'app-home',
@@ -14,6 +16,7 @@ export class HomeComponent implements OnInit {
 
   constructor(
     private songService: SongService,
+    private dialog: MatDialog,
     @Inject('API_BASE_URL') public API_BASE_URL
   ) { }
 
@@ -24,6 +27,14 @@ export class HomeComponent implements OnInit {
         console.log(this.songs);
       }
     )
+  }
+
+  showSong(data: any) {
+    this.dialog.open(SongDetailComponent, {
+      data: data,
+      width: "320px",
+      height: "600px"
+    })
   }
 
   scroll(el: HTMLElement) {

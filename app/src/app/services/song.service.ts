@@ -22,5 +22,10 @@ export class SongService {
     .pipe(catchError(this.errorHandler.handleError));
   }
 
+  getSong(id: any): Observable<Song> {
+    return this.http.get<Song>(API_BASE_URL + '/api/songs/' + id)
+    .pipe(catchError(this.errorHandler.handleError));
+  }
+
 
 }

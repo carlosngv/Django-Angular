@@ -1,1 +1,16 @@
-<p>song-detail works!</p>
+<mat-card>
+    <mat-card-header>
+        <div mat-card-avatar></div>
+        <mat-card-title>{{song.song_name}}</mat-card-title>
+        <mat-card-subtitle>{{song.song_author}}</mat-card-subtitle>
+    </mat-card-header>
+    <img mat-card-image src="{{API_BASE_URL + [song.song_cover]}}" alt="Photo of a Shiba Inu">
+    <mat-card-content>
+        <p>
+            {{song.song_description}}
+        </p>
+    </mat-card-content>
+    <mat-card-actions>
+        <button mat-button (click)="goBack()">Back</button>
+    </mat-card-actions>
+</mat-card>

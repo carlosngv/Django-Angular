@@ -12,14 +12,16 @@
             </li>
 
         </ul>
-        <div class="text-slogan">
-            Get to know your music
+        <div class="text-slogan" #sloganText>
+            <p>
+                Get to know your music
+            </p>
         </div>
     </nav>
 </div>
 
 <div class="content-container" fxLayout.xs="column">
-    <div class="info-container">
+    <div class="info-container" fxLayout="row"fxLayout.xs="column" fxLayout.sm="column">
         <div class="text-info-container" fxLayout.xs="column">
             <h1>𝙎𝙤𝙣𝙜𝘼𝙥𝙥</h1>
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel recusandae illo molestias consectetur
@@ -47,18 +49,21 @@
                 ipsum dolor sit amet consectetur adipisicing elit. Nesciunt rem totam, quo id officia assumenda quia
                 explicabo harum reiciendis ad optio, magni consequuntur. A unde hic ea officia consequuntur sit.
             </p>
-        </div>
-        <div class="img-cont">
-        </div>
 
+        </div>
+        <div class="img-cont"></div>
     </div>
 
 
 
     <div #songcatalogue class="songs-container" fxLayout="column">
         <h1><strong>Songs Catalogue</strong></h1>
-        <button mat-button>Add song</button>
-        <mat-grid-list fxFlex="100%" gutterSize="20px" cols="2" rowHeight="2:1">
+        <div class="button-container">
+            <button id="song-button" (click)="newSong()" mat-button>
+                <mat-icon>add</mat-icon>Add song
+            </button>
+        </div>
+        <mat-grid-list fxFlex="100%" gutterSize="20px" [cols]="position" rowHeight="2:1">
             <mat-grid-tile *ngFor="let song of songs" (click)="showSong(song.song_id)">
                 <img src="{{API_BASE_URL + song.song_cover}}" alt="song.song_name">
                 <mat-grid-tile-footer>

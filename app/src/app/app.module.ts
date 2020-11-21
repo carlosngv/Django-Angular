@@ -15,6 +15,9 @@ import { SongDetailComponent } from './components/song-detail/song-detail.compon
 
 import { HttpClientModule } from "@angular/common/http";
 import { FlexLayoutModule } from "@angular/flex-layout";
+import { NewSongComponent } from './components/new-song/new-song.component';
+
+import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 
 
 @NgModule({
@@ -23,6 +26,7 @@ import { FlexLayoutModule } from "@angular/flex-layout";
     HomeComponent,
     FooterComponent,
     HeaderComponent,
+    NewSongComponent,
     SongDetailComponent
   ],
   imports: [
@@ -31,7 +35,9 @@ import { FlexLayoutModule } from "@angular/flex-layout";
     BrowserAnimationsModule,
     MaterialModule,
     HttpClientModule,
-    FlexLayoutModule
+    FlexLayoutModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [
     {
@@ -39,6 +45,10 @@ import { FlexLayoutModule } from "@angular/flex-layout";
       useValue: API_BASE_URL
     }
     
+  ],
+  entryComponents: [
+    NewSongComponent,
+    SongDetailComponent
   ],
   bootstrap: [AppComponent]
 })

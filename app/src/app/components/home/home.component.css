@@ -52,14 +52,14 @@ nav ul li a:hover {
 .info-container {
     width: 100%;
     height: 50vh;
-    padding: 40px;
-    display: flex;
-    flex-direction: row;
-    column-gap: 20px;
+    margin-bottom: 20px;
+    position: relative;
+
 }
 
 .text-info-container {
-    width: 70%;
+    padding: 20px;
+    width: 65%;
 }
 
 .img-cont{
@@ -67,11 +67,15 @@ nav ul li a:hover {
     background: url('/assets/images/appmusic.jpg') no-repeat;
     background-size: cover;
     background-position: center;
+    margin-top: 10px;
 }
+
 
 .songs-container {
     width: 100%;
     padding: 40px;
+    position: relative;    
+
 }
 
 mat-grid-tile {
@@ -86,4 +90,22 @@ mat-grid-tile img {
 
 mat-grid-tile:hover {
     box-shadow: 10px 10px 10px 10px;
+}
+#song-button {
+    margin: 20px 0;
+    background-color: #cccc;   
+    float: right; 
+}
+
+@media screen and (max-width: 768px) {
+    .text-info-container {
+        padding: 20px;
+        width: 100%;
+    }
+    .img-cont{
+        width: 100%;
+    }
+    .info-container {
+        margin-bottom: 220px;
+    }
 }

@@ -25,12 +25,6 @@ export class SongDetailComponent implements OnInit {
         this.song = data;
         console.log(this.song);
     });
-
-    /* this.activatedRoute.params.pipe(switchMap((params: Params) => this.songService.getSong(params['id'])))
-    .subscribe((data) => {
-      this.song = data;
-      console.log(this.song);
-    }); */
   }
 
   goBack() {

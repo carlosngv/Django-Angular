@@ -3,5 +3,6 @@ export class Song {
     song_name: string;
     song_author: string;
     song_description: string;
-    song_cover: string;
+    song_cover?: string;
+    song_image?: File;
 }

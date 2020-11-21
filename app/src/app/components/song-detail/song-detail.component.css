@@ -1,3 +1,7 @@
-*{
-    background: transparent;
+mat-toolbar {
+    width: 100%;
+    background: #ccc;
+    margin-bottom: 5px;
+    height: 80px;
 }
+

@@ -27,5 +27,17 @@ export class SongService {
     .pipe(catchError(this.errorHandler.handleError));
   }
 
+  newSong(song: Song): Observable<any> {
+    console.log(song);
+    let fd = new FormData();
+    fd.append('song_name', song.song_name);
+    fd.append('song_author', song.song_author);
+    fd.append('song_description', song.song_description);
+    fd.append('song_cover', song.song_image);
+
+    return this.http.post<Song> (API_BASE_URL + '/api/songs/', fd)
+    .pipe(catchError(this.errorHandler.handleError));
+  } 
+
 
 }

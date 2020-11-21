@@ -1,9 +1,13 @@
+<mat-toolbar>
+    <div class="titles-toolbar" fxLayout="column">
+        <h1>{{song.song_name}}</h1>
+        {{song.song_author}}
+    </div>
+    <span class="flex-spacer"></span>
+    <button mat-button mat-dialog-close>&times;</button>
+</mat-toolbar>
 <mat-card>
-    <mat-card-header>
-        <div mat-card-avatar></div>
-        <mat-card-title>{{song.song_name}}</mat-card-title>
-        <mat-card-subtitle>{{song.song_author}}</mat-card-subtitle>
-    </mat-card-header>
+
     <img mat-card-image src="{{API_BASE_URL + [song.song_cover]}}" alt="Photo of a Shiba Inu">
     <mat-card-content>
         <p>

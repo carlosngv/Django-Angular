@@ -1,0 +1,36 @@
+<mat-toolbar>
+    <span>New Song</span>
+    <span class="flex-spacer"></span>
+    <button mat-button mat-dialog-close>&times;</button>
+</mat-toolbar>
+
+
+<form novalidate [formGroup]="songForm" #fform="ngForm" (ngSubmit)="onSubmit()">
+    <p fxLayoutAlign="space-between" fxLayout.xs="column" fxLayout.sm="column">
+        <mat-form-field appearance="outline">
+            <mat-label>Name</mat-label>
+            <input matInput type="text" formControlName="song_name" placeholder="Name" required>
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+            <mat-label>Author</mat-label>
+            <input matInput type="text" formControlName="song_author" placeholder="Author" required>
+        </mat-form-field>
+    </p>
+    <p>
+        <mat-form-field appearance="outline">
+            <mat-label>Description</mat-label>
+            <textarea matInput placeholder="Description" formControlName="song_description"></textarea>
+        </mat-form-field>
+    </p>
+    <p id="file-p">
+        <input type="file" class="custom-file-input" (change)="imageSelected($event)" #imageInput>
+    </p>
+        <div class="img-container">
+            <img [src]=" imgSelected || '/assets/images/no-image.png'" alt="Image"  (click)="imageInput.click()">
+        </div>
+    <p>
+        <button id="submit-button" mat-button type="submit">
+            Add song
+        </button>
+    </p>
+</form>

@@ -7,18 +7,20 @@ Simple aplicación web para desplegar y almacenar información de canciones (CRU
 Material y Flex Layout para su maquetación.
 * Backend realizado con Django, utilizando la herramienta Django REST Framework para su implementación.
 
+![Main](./public/main.png)
 
 
 
-# New song
--- 
+
+## New song
+---
 
 Formulario para agregar canciones. Nombre, autor, descripción e imagen de la canción. Puede previsualizarse la imagen a subir como se muestra a continuación:
 
 ![NewSong](./public/new-song.png)
 
 
-# Song detail
+## Song detail
 
 ---
 
